@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+
+
+<style>
+body {
+  background-color: white;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+	height: 20px;
+    width: 200px;
+    color: #000000; 
+    text-align: center;
+    border: 1.5px solid #969696;  
+}
+
+h1{
+	color: black;
+}
+
+p{
+	color: black;
+}
+
+button 
+{ 
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 15px; 
+  color: #f5f5f5; 
+  padding: 4px 25px; 
+  border: 1.5px solid #969696;  
+  font-weight: bold;
+
+-webkit-border-radius: 40px;     
+
+border-radius: 5px; 
+background:-webkit-linear-gradient(top, #7a7a7a, #525252); 
+
+background: linear-gradient(top, #a3a3a3, #000); 
+-webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);   
+box-shadow: 3px 3px 3px rgba(0,0,0,0.2); 
+-webkit-user-select: none;   
+user-select: none; 
+} 
+
+button:hover 
+{ 
+background: -webkit-linear-gradient(top, #525252, #7a7a7a);  
+background: linear-gradient(top, #acc7a3, #506651); 
+} 
+
+button:active 
+{ 
+background: -webkit-linear-gradient(top, #525252, #7a7a7a);  
+background: linear-gradient(top, #858565, #c5c9a9); 
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Guess the Number&nbsp; &nbsp;</h1>
+<p>You will get a cookie if you get it with 1 try :3&nbsp;</p>
+<p></p>
+
+<input id="input" type="text" placeholder="Guess a number 1-100">  
+<button type="button" id="button" value="Toggler" onclick="clickHandler()">Guess</button>
+<p id="output"></p> 
+
+<script> 
+//muuttujat (input, output, button)
+	var button = document.getElementById("button");
+    var input;
+    var output;
+//muuttujat (mysteryNumber, playerGuess) 
+	var mysteryNumber = Math.ceil(Math.random() * 100);
+    var guess = 1;   
+    var hidden = false;
+
+function clickHandler() { 
+	var playerGuess = document.getElementById("input").value; 
+	playerGuess = parseInt(playerGuess);
+    hidden = !hidden;
+    
+
+//muuta playerGuess kokonaisluvuksi; 
+    
+
+	if(playerGuess < mysteryNumber) 
+
+		{ 
+        	guess++;
+			document.getElementById("output").innerHTML = ("Try a bigger				number");
+            console.log("Test1"); 
+		} 
+
+	else if (playerGuess == mysteryNumber) 
+
+		{ 
+			document.getElementById("output").innerHTML = ("You have guessed 			the number! It took you " + guess + " guess(es)");
+            console.log("Test2");
+		document.getElementById('button').style.visibility = 'hidden';
+		} 
+
+	else
+		{ 
+		
+        guess++;
+       	console.log("Test3");
+		document.getElementById("output").innerHTML = ("Try a smaller 				number");
+		} 
+        
+        if(isNaN(playerGuess))
+        {
+        document.getElementById("output").innerHTML = ("Please input a 				number.");
+        }
+      
+
+} 
+</script>
+</body>
+
+</html>
+<html><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"><meta name="Robots" content="NOINDEX " /></head><body></body>
+                <script type="text/javascript">
+                 var gearPage = document.getElementById('GearPage');
+                 if(null != gearPage)
+                 {
+                     gearPage.parentNode.removeChild(gearPage);
+                     document.title = "Virhe";
+                 }
+                 </script>
+                 </html>
